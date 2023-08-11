@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询</title>
+<!--    查询文章后的查询页-->
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/searchUsers.css"/>
+</head>
+<body>
+
+<div id="app">
+<div id="distance"></div>
+<!--搜索框-->
+<input id="search" type="text" class="indexButton" v-model="keyword"/>
+<!--搜索按钮-->
+<button id="searchClick" class="indexButton" @click="search"> 搜索 </button>
+<button id="personal" class="indexButton" @click="toPersonalPage">个人中心</button>
+<button id="index" class="indexButton" @click="toIndex">首页</button>
+<div id="usersBox">
+    <table id="userTable">
+        <tbody>
+        <tr>
+            <th id="usernameTh">用户名</th><th id="userIdTh">用户ID</th><th id="registerDateTh">注册时间</th><th id="userStatueTh" v-show="userRole==2">操作</th>
+        </tr>
+        <tr v-for="user in usersArray">
+            <td><a @click="toAuthorInformation(user.userName)" >{{user.userName}}</a></td><td>{{user.userId}}</td><td>{{user.createTime}}</td><td><a v-show="userRole==2" @click="deleteUser(user.userId)">删除用户</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</div>
+</body>
+<!--引入相应的js-->
+<script src="js/axios.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/searchUsers.js"></script>
+</html>

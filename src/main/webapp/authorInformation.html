@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作者信息</title>
+    <link rel="stylesheet" href="css/authorInformation.css">
+</head>
+<body>
+<h1 style="text-align: center ; font-size: larger">作者信息中心</h1>
+<!--按钮-->
+<div id="authorPage">
+<button id="index" class="authorInformation">首页</button>
+<button id="collection" class="authorInformation">收藏:{{user.collectionNum}}</button>
+<button id="published" class="authorInformation" @click="toMyArticles(user.userId)">已发布</button>
+<button id="follow" class="authorInformation">关注</button>
+
+<!--昵称框，id框，时间-->
+<font style="top: 75px;height: 30px;left: 205px;width:60px ;position: absolute" size="4" ><b>昵称:</b></font>
+<font style="top: 115px;height: 30px;left: 205px;width:60px ;position: absolute" size="4" ><b>id: </b></font>
+<font style="top: 155px;height: 30px;left: 170px;width:120px ;position: absolute" size="4" ><b>注册时间:</b></font>
+<!--如何设置通过从后端获取来展示作者的信息-->
+<textarea id="username" type="text" v-bind:value="user.userName" class="informationText " maxlength="30" style="resize: none" readonly></textarea>
+<textarea id="userid" type="text" v-bind:value="user.userId" class="informationText" style="resize: none" readonly></textarea>
+<textarea id="createtime" type="text" v-bind:value="user.createTime" class="informationText" style="resize: none" readonly></textarea>
+<button id="follower" class="authorInformation">关注数:{{user.followNum}}</button>
+<button id="fans" class="authorInformation">粉丝数:{{user.fansNum}}</button>
+
+</div>
+
+</body>
+<script src="js/axios.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/responseFilter.js"></script>
+<script src="js/authorInformation.js"></script>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../js/vue.js"></script>
+
+<body>
+<div id="aa" >
+    <p contenteditable="true">
+    {{articlec}}
+    </p>
+    <p>
+        {{articlec}}
+    </p>
+</div>
+<script>
+    var a = new Vue({
+        el:"#aa",
+        data(){
+            return{
+                articlec:"adsad",
+                ar:""
+            }
+        },
+        method:{
+
+        },
+        mounted(){
+
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <!--    通过link -->
+    <link rel="stylesheet" href="../css/article.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<h1 style="text-align: center ; font-size:xx-large"  >我的收藏</h1>
+<div id="distance"></div>
+<button id="toIndexButton" onclick="location.href='http://localhost:8080/ArticlePublishingPlatform/index.html'">首页</button>
+<button id="personal" class="indexButton" >个人中心</button>
+<br>
+<div id="articleBox" >
+<button id="technology"class="typeButton" @click="getArticleBycatgory('3')">科技</button>
+<button id="economy"class="typeButton" @click="getArticleBycatgory('2')">经济</button>
+<button id="literature"class="typeButton" @click="getArticleBycatgory('1')">文学</button>
+<button id="life"class="typeButton" @click="getArticleBycatgory('4')">生活</button>
+<button id="sport"class="typeButton" @click="getArticleBycatgory('5')">体育</button>
+<button id="entertainment"class="typeButton" @click="getArticleBycatgory('6')">娱乐</button>
+    <!--文章详情框-->
+
+    <div class="article"  v-for="article in articles" ><b><a @click="toArticleDetails(article.articleId)">《{{article.title}}》</a></b><span>--<a @click="toAuthorInformation(article.author)">{{article.author}}</a>----</span><b>收藏数:{{article.collectNum}}</b>--- <br/><span>标签: {{article.categoryName}} </span> <span>发布时间:{{article.createTime}}</span><a @click="cancelCollect(article.articleId,userId)">取消收藏</a></div>
+    <div id="pageNums">
+        <button id="backPage" @click="backPage">上一页</button>
+        <button v-for="pageNum in totalPageNum" @click="getArticleByPage(pageNum)">{{pageNum}}</button>
+        <button id="forward" @click="nextPage">下一页</button>
+    </div>
+
+</div>
+
+</body>
+<!--引入相应的js-->
+<script src="../js/axios.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../js/responseFilter.js"></script>
+<script src="../js/myCollectArticles.js"></script>
+</html>

@@ -1,0 +1,92 @@
+#search{
+    /*输入框*/
+    position:absolute;
+    left:50px;
+    width: 400px;
+    height:35px ;
+}
+
+#searchClick{
+/*    搜索按钮 */
+    position: absolute;
+    left: 465px;
+    width: 80px;
+    height:36px;
+}
+
+#loginandRegister{
+/*    登录注册（若已经登录，这个按钮就不显示了吧）*/
+    position: absolute;
+    left: 560px;
+    width:120px ;
+    height: 36px;
+}
+
+#personal{
+/*    个人中心（那就在一个位置）*/
+    position: absolute;
+    left: 560px;
+    width:120px ;
+    height: 36px;
+}
+
+.indexButton{
+    top: 80px
+}
+
+#new{
+    position: absolute;
+    left: 50px;
+    top: 130px;
+    width: 80px;
+    height: 36px;
+}
+#hot{
+    position: absolute;
+    left:140px ;
+    top: 130px;
+    width:80px ;
+    height:36px ;
+}
+.typeButton{
+    top: 130px;
+    width:80px ;
+    height:36px ;
+}
+#technology{
+    position: absolute;
+    left: 230px;
+}
+#economy{
+    position: absolute;
+    left:320px;
+}
+#literature{
+    position: absolute;
+    left: 410px;
+}
+#life{position: absolute;
+    left: 500px;
+}
+#sport{
+    position: absolute;
+    left: 590px;
+}
+#entertainment{
+    position: absolute;
+    left:680px;
+}
+#distance{
+    height: 65px;
+}
+#pageNums{
+    margin-top: 10px;
+    width: 710px;
+    text-align: center;
+}
+#searchUser{
+    position: absolute;
+    left: 700px;
+    width:120px ;
+    height: 36px;
+}

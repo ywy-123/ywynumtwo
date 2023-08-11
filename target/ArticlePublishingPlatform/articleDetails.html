@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章详情</title>
+</head>
+<body>
+<div id="artileVue">
+    <h1 id="title">{{article.title}}</h1>
+    <a @click="toAuthor" id="authorName">作者:{{article.author}}</a>
+    <span id="collect" @click="collect"><b style="font-size: 30px;color: red" v-show="article.collected">&#9825</b><b style="font-size: 30px" v-show="!article.collected">&#9825</b>收藏:{{article.collectNum}}</span>
+    <span id="createTime">发布时间:{{article.createTime}}</span>
+    <span id="categories">标签:{{article.categoryName}}</span>
+    <button v-if="editPower||userRole==2" @click="enterEdit">编辑文本</button>
+    <button v-if="editPower||userRole==2" @click="deleteArticle(article.articleId)">删除文章</button>
+    <button v-show="isEditing" @click="save">保存</button>
+    <button v-show="isEditing" @click="cancel">取消</button>
+    <p id="articleContent">{{article.content}}</p>
+<!--    <p id="articleContent"></p>-->
+</div>
+
+
+
+</body>
+<script src="js/vue.js"></script>
+<script src="js/axios.js"></script>
+<script src="js/articleDetail.js"></script>
+<script src="js/responseFilter.js"></script>
+</html>

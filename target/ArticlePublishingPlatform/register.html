@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<script src="js/axios.js"></script>
+<script src="js/vue.js"></script>
+<style>
+    #registerbox{
+        margin: 0 auto;
+        width: 400px;
+    }
+</style>
+<body>
+
+<h1 style="text-align: center">欢迎注册文章发布平台</h1>
+<div id="registerbox">
+<!--  type \@blur  \ name  \v-pojo  \id \placeholder onkeyup  -->
+    <div>
+        <div>
+            用户名: <br>
+            <input type="text" @blur="judgeUserName" name="username" v-model="username" id="username" placeholder="请输入用户名" onkeyup="value=value.replace(/\W/g,'')" onpaste="value=value.replace(/\W/g,'')" oncontextmenu = "value=value.replace(/\W/g,'')"><span style="font-size: xx-small;"> 2到10位字母,数字及下划线</span>
+            <b style="color: red;font-size: xx-small"><br>{{usernameErrorMessage}}</b>
+        </div>
+        <div>
+            密码：<br>
+            <input type="password" @blur="judgePassword" name="password" v-model="password" id="password" placeholder="请输入密码"
+                   onkeyup="value=value.replace(/[^a-zA-Z0-9]/g,'')" onpaste="value=value.replace(/[^a-zA-Z0-9]/g,'')"
+                   oncontextmenu = "value=value.replace(/[^a-zA-Z0-9]/g,'')"><span style="font-size: xx-small">6到20位字母或数字</span>
+            <b id="password_unllegal" style="color: red;font-size: xx-small"><br>{{passwordErrorMessage}}</b>
+        </div>
+        <div>
+            确认密码：<br>
+            <input type="password" @blur="surePasswordTip" name="surePassword" v-model="surePassword" id="sure_password"
+                   placeholder="请输入密码" onkeyup="value=value.replace(/[^a-zA-Z0-9]/g,'')" onpaste="value=value.replace(/[^a-zA-Z0-9]/g,'')"
+                   oncontextmenu = "value=value.replace(/[^a-zA-Z0-9]/g,'')"><span style="font-size: xx-small">6到20位字母或数字</span>
+            <b style="color: red;font-size: xx-small"><br>{{sureErrorMessage}}</b>
+        </div>
+        <div style="position: relative">
+            <button value="注册" @click="register" name="register" id="register">注册</button>
+        </div>
+        <b style="color: red ;font-size: xx-small"><br>{{registerErrorMessage}}</b>
+    </div>
+</div>
+</body>
+<script src="js/register.js"></script>
+</html>

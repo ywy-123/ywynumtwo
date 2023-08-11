@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+<!--    通过link -->
+    <link rel="stylesheet" href="css/article.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<h1 style="text-align: center ; font-size:xx-large"  >文章发布平台</h1>
+<div id="distance"></div>
+<!--搜索框-->
+<input id="search" type="text" class="indexButton"/>
+<!--搜索按钮-->
+<button id="searchClick" class="indexButton"> 搜索 </button>
+<div id="displayButton">
+    <button id="loginandRegister" class="indexButton"> 登录/注册 </button>
+    <button id="personal" class="indexButton" >个人中心</button>
+    <button id="searchUser" class="indexButton">查询用户界面</button>
+</div>
+<br>
+<div id="articleBox" >
+<button id="new" class="typeButton" @click="getArticleBycatgory('7')">最新</button>
+<button id="hot"class="typeButton" @click="getArticleBycatgory('8')">最热</button>
+<button id="technology"class="typeButton" @click="getArticleBycatgory('3')">科技</button>
+<button id="economy"class="typeButton" @click="getArticleBycatgory('2')">经济</button>
+<button id="literature"class="typeButton" @click="getArticleBycatgory('1')">文学</button>
+<button id="life"class="typeButton" @click="getArticleBycatgory('4')">生活</button>
+<button id="sport"class="typeButton" @click="getArticleBycatgory('5')">体育</button>
+<button id="entertainment"class="typeButton" @click="getArticleBycatgory('6')">娱乐</button>
+
+<!--文章详情框-->
+
+    <div class="article"  v-for="article in articles" ><b><a @click="toArticleDetails(article.articleId)">《{{article.title}}》</a></b><span>--<a @click="toAuthorInformation(article.author)">{{article.author}}</a>----</span><b>收藏数:{{article.collectNum}}</b>--- <br/><span>标签: {{article.categoryName}} </span> <span>发布时间:{{article.createTime}}</span></div>
+    <div id="pageNums">
+        <button id="backPage" @click="backPage">上一页</button>
+        <button v-for="pageNum in totalPageNum" @click="getArticleByPage(pageNum)">{{pageNum}}</button>
+        <button id="forward" @click="nextPage">下一页</button>
+    </div>
+
+</div>
+
+</body>
+<!--引入相应的js-->
+<script src="js/axios.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/responseFilter.js"></script>
+<script src="js/index.js"></script>
+</html>

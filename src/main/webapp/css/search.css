@@ -1,0 +1,41 @@
+
+#search{
+    /*输入框*/
+    position:absolute;
+    top: 50px;
+    left:50px;
+    width: 400px;
+    height:35px ;
+}
+#searchClick{
+    /*    搜索按钮 */
+    position: absolute;
+    top: 50px;
+    left: 465px;
+    width: 80px;
+    height:36px;
+
+}
+#personal{
+    /*    个人中心（那就在一个位置）*/
+    position: absolute;
+    top: 50px;
+    left: 560px;
+    width:120px ;
+    height: 36px;
+}
+#users{
+    position: absolute;
+    left: 50px;
+    top: 100px;
+    width: 80px;
+    height: 36px;
+}
+#articles{
+    position: absolute;
+    left:140px ;
+    top: 100px;
+    width:80px ;
+    height:36px ;
+
+}

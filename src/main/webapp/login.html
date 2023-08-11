@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+
+</head>
+
+<script src="js/axios.js"></script>
+<script src="js/vue.js"></script>
+<style>
+
+    /*style里面的注释不可以使用 <--!-->*/
+    #loginbox{
+        margin: 0 auto;
+        width: 400px;
+    }
+
+</style>
+<body>
+<h1 style="text-align: center">欢迎登录文章发布平台</h1>
+<div id="loginbox">
+    <div>
+        <div>
+            用户名:<br>
+<!--    @blur="usernameErrorMessage"        -->
+            <input type="text" required name="username"
+                   @blur="usernameErrorTip" v-model="username"
+                   id="username" placeholder="请输入用户名" onkeyup="value=value.replace(/\W/g,'')"
+                   onpaste="value=value.replace(/\w/g,'')" oncontextmenu="value=value.replace(/\W/g,'')">
+            <span style="font-size: xx-small">2至10为字母、数字及下划线</span>
+            <b id="username_error_message" style="color:red;"><br>{{usernameErrorMessage}}</b>
+
+        </div>
+        <div>
+            密码:<br>
+            <input type="password" required name="password" @blur="passwordErrorTip"
+                   v-model="password" id="password" placeholder="请输入密码" onkeyup="value=value.replace(/[^a-zA-Z0-9]/g,'')"
+            onpaste="value=value.replace(/[^a-zA-Z0-9]/g,'')" oncontextmenu="value=value.replace(/[^a-zA-Z0-9]/g,'')">
+            <span style="font-size: xx-small">6到20位字母或数字</span>
+            <b id="password_error_message" style="color: red;"><br>{{passwordErrorMessage}}</b>
+
+        </div>
+        <br>
+        <div style="position: relative">
+            <button value="提交" @click="submitData">提交</button>
+            <a href="register.html" style="position: absolute;right: 100px">注册</a>
+        </div>
+    </div>
+
+</div>
+<script src="js/login.js"></script>
+</body>
+</html>

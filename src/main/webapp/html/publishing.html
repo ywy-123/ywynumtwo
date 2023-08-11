@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布</title>
+</head>
+<body>
+<h1>发布</h1>
+<div id="filePublish">
+    <label>标题 </label><input type="text" v-model:value="title" placeholder="请输入文章标题!"/>
+    <br>
+    <input type="file" id="File"/>
+    <br>
+    <input type="checkbox" value="3">科技
+    <input type="checkbox" value="2">经济
+    <input type="checkbox" value="1">文学
+    <input type="checkbox" value="4">生活
+    <input type="checkbox" value="5">体育
+    <input type="checkbox" value="6">娱乐
+    <br>
+    <button @click="publish" >发布</button>
+</div>
+</body>
+<script src="../js/axios.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../js/publishing.js"></script>
+</html>

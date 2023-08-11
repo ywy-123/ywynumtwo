@@ -1,0 +1,36 @@
+table{
+    border: 4px black;
+}
+
+th{
+    text-align: center;
+}
+
+td{
+    text-align: center;
+}
+
+#usernameTh{
+    width: 150px;
+}
+
+#userIdTh{
+    width: 200px;
+}
+
+#registerDateTh{
+    width: 140px;
+}
+
+#userStatueTh{
+    width: 140px;
+}
+
+#userTable{
+    /*position: absolute;*/
+    margin-left: 150px;
+    margin-top: 90px;
+}
+#buttonBox{
+    text-align: center;
+}

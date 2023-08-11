@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+<!--    link引入css   -->
+    <link rel="stylesheet" href="../css/personnalInformation.css">
+</head>
+<body>
+<h1 style="text-align: center ; font-size: larger">个人信息中心</h1>
+<!--按钮-->
+<div id="personalPage">
+<button id="index" class="personalInformationButton">首页</button>
+<button id="collection" class="personalInformationButton" @click="toCollectPage">收藏:{{user.collectionNum}}</button>
+<button id="published" class="personalInformationButton" @click="toMyArticles(user.userId)">已发布</button>
+<button id="publish" class="personalInformationButton" @click="toPublishing">发布</button>
+<button id="uploadExcel" v-if="userRole==2" @click="uploadExcel" class="personalInformationButton">上传excel文件</button>
+<button id="downloadExcel" @click="downloadExcel" class="personalInformationButton">下载excel</button>
+<!--昵称框，id框，时间-->
+<font style="top: 75px;height: 30px;left: 205px;width:60px ;position: absolute" size="4" ><b>昵称:</b></font>
+<font style="top: 115px;height: 30px;left: 205px;width:60px ;position: absolute" size="4" ><b>id: </b></font>
+<font style="top: 155px;height: 30px;left: 170px;width:120px ;position: absolute" size="4" ><b>注册时间:</b></font>
+
+<textarea id="username" type="text" v-model:value="user.userName" class="informationText " maxlength="30" style="resize: none" readonly></textarea>
+<textarea id="userid" type="text" v-bind:value="user.userId" class="informationText" style="resize: none" readonly></textarea>
+<textarea id="createtime" type="text" v-bind:value="user.createTime" class="informationText" style="resize: none" readonly></textarea>
+<button id="follower" class="personalInformationButton">关注数:{{user.followNum}}</button>
+<button id="fans" class="personalInformationButton">粉丝数:{{user.fansNum}}</button>
+<button id="edit" @click="editor" class="personalInformationButton">编辑信息</button>
+    <button id="save" @click="save" v-show="editFlag" class="personalInformationButton">保存</button>
+    <button id="cancle" @click="Cancle" v-show="editFlag" class="personalInformationButton">取消</button>
+<!--账号设置包括注销和退出登录-->
+<button id="accountSettings" @click="zhuxiao" class="personalInformationButton">注销账户</button>
+<button id="totalNum" class="personalInformationButton" v-if="userRole==2">文章总数:{{articleTotalNum}}</button>
+
+</div>
+</body>
+
+<!--引入相应的js-->
+<script src="../js/axios.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../js/responseFilter.js"></script>
+<script src="../js/PersonalInformation.js"></script>
+</html>

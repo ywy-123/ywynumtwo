@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/article.css"/>
+</head>
+<body>
+<div id="myArticleVue">
+    <h1><a @click="toAuthorInformation(authorName)">{{authorName}}</a>发布的文章</h1>
+    <div class="article"  v-for="article in articles" ><b><a @click="toArticleDetails(article)">《{{article.title}}》</a></b><b>收藏数:{{article.collectNum}}</b>--- <br/><span>标签: {{article.categoryName}} </span> <span>发布时间:{{article.createTime}}</span>-------<span>状态:<b v-if="article.isFreezing==1">冻结</b><b v-else>正常</b></span></div>
+    <div id="pageNums">
+        <button id="backPage" @click="backPage">上一页</button>
+        <button v-for="pageNum in totalPageNum" @click="getArticleByPage(pageNum)">{{pageNum}}</button>
+        <button id="forward" @click="nextPage">下一页</button>
+    </div>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/axios.js"></script>
+<script src="js/myArticle.js"></script>
+</html>

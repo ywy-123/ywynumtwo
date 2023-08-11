@@ -1,0 +1,72 @@
+.personalInformationButton{
+    position: absolute;
+    width:80px ;
+    height:36px ;
+}
+#index{
+    left: 20px;
+    top:40px;
+}
+#collection{
+    left: 20px;
+    top:80px;
+}
+#published{
+    left: 20px;
+    top:120px;
+}
+#publish{
+    left: 20px;
+    top:160px;
+}
+#follower{
+    top:60px;
+    left:800px;
+}
+#fans{
+    top:100px;
+    left:800px;
+}
+#accountSettings{
+    top:180px;
+    left: 800px;
+}
+#edit{
+    top:140px;
+    left:800px;
+}
+#save{
+    top:140px;
+    left: 900px;
+}
+#cancle{
+    top: 140px;
+    left: 1000px;
+}
+#totalNum{
+    top:220px;
+    left:800px;
+}
+.informationText{
+    position: absolute;
+    left:250px;
+    width: 200px;
+    height: 30px;
+}
+#username{
+    top:70px;
+}
+#userid{
+    top:110px;
+}
+#createtime{
+    top:150px;
+}
+#uploadExcel{
+    left: 20px;
+    top: 200px;
+}
+#downloadExcel{
+    left: 105px;
+    top:200px;
+}
